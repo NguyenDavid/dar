@@ -1,5 +1,8 @@
 package com.dar.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +18,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dar.service.CafeService;
+import com.dar.service.CommentaireService;
 import com.dar.service.UserService;
+import com.dar.model.Commentaire;
 import com.dar.model.User;
 
 @Controller
@@ -23,6 +29,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private CommentaireService commentaireService;
 
 	@RequestMapping( value = "/register" , method = RequestMethod.GET )
 	public String displayRegister( Model model ) {
@@ -120,8 +129,17 @@ public class UserController {
 	}
 
 	@RequestMapping( value = "/home" , method = RequestMethod.GET )
-	public String displayHome() {
-		return "home";
+	public ModelAndView displayHome() {
+		ModelAndView mv = new ModelAndView("home");
+		List<Commentaire> listCom = commentaireService.listCommentaires();
+		List<Commentaire> commentaireList = new ArrayList<Commentaire>();
+		int cpt=0, size = listCom.size();
+		for(int i=0; i<size && cpt<5; i++){
+			commentaireList.add(listCom.get(size-i-1));
+			cpt++;
+		}
+		mv.addObject("commentaireList", commentaireList);
+		return mv;
 	}
 	
 	@RequestMapping("/logout")

@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>ProjetDAR</title>
+	<title>BreakFirst Game</title>
 	<link rel="stylesheet" type="text/css" href='<c:url value="/web-resources/css/style.css"/>' />
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	
@@ -58,8 +58,7 @@
 					</div>
 					<br />
 					<h1>BreakFirst Game</h1>
-					<br />
-					<br />
+
 				</div>
 				<!--close welcome-->
 				<div id="welcome_slogan">
@@ -76,7 +75,7 @@
 			<ul id="menu">
 				<li><a href="home">Home</a></li>
 				<li><a href="homeCafe">Liste des cafés</a></li>
-				<li><a href="askCafe">Cherche café(s)</a></li>
+				<li><a href="askCafe">Cherche itinéraire</a></li>
 				<li><a href="logout">Logout</a></li>
 			</ul>
 		</div>
@@ -140,8 +139,9 @@
 							</ul>
 							<br/>
 							<form:form modelAttribute="cafe" class="form-horizontal" action="addCom" method="post" accept-charset="ISO-8859-1">
-								<input type="text" name="contenu"/>
+								<input type="text" name="contenu" size=100)/>
 								<input type="hidden" name="nom" value='${cafe.nom}'/>
+								<br/>
 								<button type="submit" class="btn btn-lg btn-danger form-control">Ajouter commentaire</button>
 							</form:form>
 						</div>

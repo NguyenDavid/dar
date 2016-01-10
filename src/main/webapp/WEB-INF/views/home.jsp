@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>BreakFirst Game - Paris</title>
+<title>BreakFirst Game</title>
 	<link rel="stylesheet" type="text/css" href='<c:url value="/web-resources/css/style.css"/>' />
 	<script type="text/javascript" src='<c:url value="/web-resources/js/jquery.min.js"/>'></script>
 	<script type="text/javascript" src='<c:url value="/web-resources/js/image_slide.js"/>'></script>
@@ -37,7 +37,6 @@
 				//dans lequel la carte doit s'afficher et les options
 				var carte = new google.maps.Map(document.getElementById("carte"), options);
 				
-				/*************AJOUT*/
 				var marker = new google.maps.Marker({
 				    position: latlng,
 				    map: carte,
@@ -78,8 +77,7 @@
 					</div>
 					<br />
 					<h1>BreakFirst Game</h1>
-					<br />
-					<br />
+					
 				</div><!--close welcome-->
 				<div id="welcome_slogan">
 					<h1>Paris</h1>
@@ -92,7 +90,7 @@
 			<ul id="menu">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="homeCafe">Liste des cafés</a></li>
-				<li><a href="askCafe">Cherche café(s)</a></li>
+				<li><a href="askCafe">Cherche itinéraire</a></li>
 				<li><a href="logout">Logout</a></li>
 			</ul>
 		</div><!--close menubar-->
@@ -102,46 +100,30 @@
 			<div class="sidebar_container">
 				<div class="sidebar">
 					<div class="sidebar_item">
-						<h2>Coffee Break</h2>
-						<p>Trouvez un point de rendez-vous pour vous retrouver entre
-							amis.</p>
+						<h2>Derniers commentaires :</h2>
+						<h3></h3>
+						<c:forEach items="${commentaireList}" var="com">
+							<li><label>${com.cafe.nom} : ${com.contenu}</label></li>
+							<br/>
+						</c:forEach>
+						<p></p>
 					</div><!--close sidebar_item-->
 				</div><!--close sidebar-->
 				<div class="sidebar">
 					<div class="sidebar_item">
-						<h2>Latest Update</h2>
-						<h3>March 2013</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Pellentesque cursus tempor enim.</p>
+						<h3></h3>
+						<p></p>
 					</div><!--close sidebar_item-->
 				</div><!--close sidebar-->
 				<div class="sidebar">
 					<div class="sidebar_item">
-						<h3>February 2013</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Pellentesque cursus tempor enim.</p>
+						<h3></h3>
+						<p></p>
 					</div><!--close sidebar_item-->
 				</div><!--close sidebar-->
 				<div class="sidebar">
 					<div class="sidebar_item">
-						<h3>January 2013</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Pellentesque cursus tempor enim.</p>
-					</div><!--close sidebar_item-->
-				</div><!--close sidebar-->
-				<div class="sidebar">
-					<div class="sidebar_item">
-						<h2>Contact</h2>
-						<p>Emails:</p>
-						<p>
-							<a href="mailto:info@youremail.co.uk">email1</a>
-						</p>
-						<p>
-							<a href="mailto:info@youremail.co.uk">email2</a>
-						</p>
-						<p>
-							<a href="mailto:camille.guillard@etu.upmc.fr">camille.guillard@etu.upmc.fr</a>
-						</p>
+						
 					</div><!--close sidebar_item-->
 				</div><!--close sidebar-->
 			</div><!--close sidebar_container-->
@@ -159,47 +141,27 @@
 				<div class="content_item">
 					<h1>Bienvenue!</h1>
 
-					<p>
-						<a href=# id="map" onclick="map();">Activer Google Maps</a>
-					</p>
-
-					<div id="carte" style="width: 650px; height: 420px;"></div>
-
-
-
 					<br />
 
 					<div class="content_image">
 						<img src='<c:url value="/web-resources/assets/paris6.jpg"/>'
 							alt="image1" width="150" height="150" />
 					</div>
-					<p>
-						Vivez l'unique expérience du BreakFirst Game. Cette application
-						web va changer votre vie! Votre planning de la journée ne sera
-						plus jamais désorganisé.<br /> Vous serez à vos rendez-vous en
-						temps et en heure. <br />Prenez le contrôle! Remettez de l'ordre
-						dans votre vie:
-					</p>
+						<p>
+							<label>Principe :</label>
+							<br/>
+							<label> - repérer les cafés à un euro</label>
+							<br/>
+							<label> - choisir un itinéraire de 1 à 8 café(s)</label>
+							<br/>
+							<label> - poster des commentaires sur vos cafés préférés</label>
+							<br/>
+						</p> 
+				
 
-					<p>
-						<a id="inscr" href="register.jsp">Inscrivez-vous pour
-							participer au BreakFirst Game de Paris</a>
-					</p>
+					
 					<br style="clear: both" />
-
-					<div class="content_container">
-						<p>Commencez par créer votre Calendrier afin d'organiser des
-							événements dans vos lieux préférés en compagnie de vos amis.</p>
-						<div class="button_small">
-							<a href="calendrier.jsp">Read more</a>
-						</div><!--close button_small-->
-					</div><!--close content_container-->
-					<div class="content_container">
-						<p>Parcourez le Réseau du BreakFirst Game de Paris en
-							consultant les événements crées par vos amis et participez y.</p>
-						<div id="ajouter" class="button_small">
-							<a href="#">Read more</a>
-						</div><!--close button_small-->
+			
 					</div><!--close content_container-->
 				</div><!--close content_item-->
 			</div><!--close content-->

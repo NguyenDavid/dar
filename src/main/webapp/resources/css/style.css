@@ -16,6 +16,11 @@ a[id="inscr"]
 color: yellow;
 }
 
+a[id="sss"]
+{
+color: black;
+}
+
 *
 { margin: 0;
   padding: 0;}
@@ -129,8 +134,8 @@ ol li
   margin: 0 auto;
   background: #0043A8;
   background: -moz-linear-gradient(#43A9FF, #0043A8);
-  background: -o-linear-gradient(#43A9FF, #0043A8);
-  background: -webkit-linear-gradient(#43A9FF, #0043A8);
+  background: -o-linear-gradient(#43A9FF, 0043A8);
+  background: -webkit-linear-gradient(43A9FF, 0043A8);
   border-radius: 15px 15px 0px 0px;
   -moz-border-radius: 15px 15px 0px 0px;
   -webkit-border: 15px 15px 0px 0px;
@@ -139,7 +144,7 @@ ol li
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
   } 
   
-#welcome
+welcome
 { width: 960px;
   float: left;
   height: 50px;
@@ -147,7 +152,7 @@ ol li
   padding-left: 20px;
   background: transparent;} 
   
-#welcome_slogan
+welcome_slogan
 { width: 960px;
   float: left;
   height: 50px;
@@ -155,11 +160,11 @@ ol li
   padding-left: 20px;
   background: transparent;}   
    
-#welcome H1
+welcome H1
 { font: normal 300% Arial, Helvetica, sans-serif;
   letter-spacing: -3px;
-  color: #FFF;
-  text-shadow: 1px 1px #1D1D1D;}
+  color: FFF;
+  text-shadow: 1px 1px 1D1D1D;}
 
 #welcome_slogan H1
 { font: normal 200% Arial, Helvetica, sans-serif;

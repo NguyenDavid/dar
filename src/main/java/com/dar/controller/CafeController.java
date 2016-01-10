@@ -161,7 +161,8 @@ public class CafeController {
 					ModelAndView mv = new ModelAndView("showCafe");
 					List<Cafe> listCafe = cafeService.getCafeByArrondissement(ar);
 					
-					listCafe = triListCafe(listCafe);			
+//					listCafe = triListCafe(listCafe);
+					listCafe = triListCafe(kruskal(listCafe.get(0),nb));		
 					
 					if(listCafe.size() <= nb){
 						//pas assez de cafes dans cet arrondissement ou ==
@@ -173,6 +174,7 @@ public class CafeController {
 						for(int i=0; i<nb; i++){
 							listCafeReduced.add(listCafe.get(i));
 						}
+						
 						mv.addObject("cafeList", listCafeReduced);
 						mv.addObject("nombreCafe", nb);
 					}
@@ -252,6 +254,8 @@ public class CafeController {
 //			dist+=distance(listCafe.get(i), listCafe.get(i+1));
 //		}
 //		System.out.println("distance debut : "+dist);
+
+
 		
 		List<Cafe> cafesTries = new ArrayList<Cafe>();
 		cafesTries.add(listCafe.get(0));
@@ -283,6 +287,45 @@ public class CafeController {
 		
 		return cafesTries;
 	}
+
+	
+
+	public List<Cafe> kruskal(Cafe depart, int nb_cafe){
+		List<Cafe> selection = new ArrayList<Cafe>();
+		List<Cafe> libre = cafeService.listCafes();
+		
+		int it=0;
+		selection.add(depart);
+		for(int i=0; i<libre.size();i++) 
+			if(libre.get(i).getNom().equals(depart.getNom())) 
+				libre.remove(i);
+
+		
+		it++;
+		
+		while(it<nb_cafe){ 
+			Cafe c=null;
+			double distance = Double.MAX_VALUE;
+			
+			//pour tous les points de departs, on cherche le point le plus proche
+			for(int i=0;i<selection.size();i++){
+				for(int j=0;j<libre.size();j++){
+					if(selection.get(i).distance(libre.get(j)) < distance){
+						c = libre.get(j);
+						distance = selection.get(i).distance(libre.get(j));	
+					}
+				}
+			}
+			// le cafe c:  est le cafe le plus proche de la zone
+			selection.add(c);
+			libre.remove(c);
+			it++;
+			
+		}
+		
+		return selection;
+	}
+
 	
 	public double distance(Cafe c1, Cafe c2){
 		double x1 = c1.getX();

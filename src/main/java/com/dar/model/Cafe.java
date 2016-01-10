@@ -103,4 +103,9 @@ public class Cafe {
 	public List<Commentaire> getCommentaires(){
 		return this.commentaires;
 	}
+	public double distance(Cafe c2){
+		double x2 = c2.getX();
+		double y2 = c2.getY();
+		return Math.sqrt((x2-x)*(x2-x)+(y2-y)*(y2-y));
+	}
 }

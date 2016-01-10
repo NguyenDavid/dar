@@ -6,6 +6,7 @@
 
 <html>
 <head>
+	<title>BreakFirst Game</title>
 	     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsIEm67g2EcheXmrxxBgh6Jq5TKLmi2sk&signed_in=true&callback=initialiser"
          async defer></script>
 	<!--
@@ -118,8 +119,7 @@
 					</div>
 					<br />
 					<h1>BreakFirst Game</h1>
-					<br />
-					<br />
+
 				</div>
 				<!--close welcome-->
 				<div id="welcome_slogan">
@@ -136,7 +136,7 @@
 			<ul id="menu">
 				<li><a href="home">Home</a></li>
 				<li><a href="homeCafe">Liste des cafés</a></li>
-				<li class="active"><a href="askCafe">Cherche café(s)</a></li>
+				<li class="active"><a href="askCafe">Cherche itinéraire</a></li>
 				<li><a href="logout">Logout</a></li>
 			</ul>
 		</div>

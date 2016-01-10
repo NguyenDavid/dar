@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Plan du site</title>
+	<title>BreakFirst Game</title>
 	<link rel="stylesheet" type="text/css" href='<c:url value="/web-resources/css/style.css"/>' />
 </head>
 <body>
@@ -19,8 +19,7 @@
 						</div>
 						<br />
 						<h1>BreakFirst Game</h1>
-						<br />
-						<br />
+
 					</div>
 					<!--close welcome-->
 					<div id="welcome_slogan">
@@ -37,7 +36,7 @@
 				<ul id="menu">
 					<li><a href="home">Home</a></li>
 					<li><a href="homeCafe">Liste des cafés</a></li>
-					<li><a href="askCafe">Cherche café(s)</a></li>
+					<li><a href="askCafe">Cherche itinéraire</a></li>
 					<li><a href="logout">Logout</a></li>
 				</ul>
 			</div>
@@ -52,7 +51,7 @@
 								<ul>
 									<li><a href="home">Home</a></li>
 									<li><a href="homeCafe">Liste des cafés</a></li>
-									<li><a href="askCafe">Cherche café(s)</a></li>
+									<li><a href="askCafe">Cherche itinéraire</a></li>
 								</ul>
 							<br/>
 						</div>

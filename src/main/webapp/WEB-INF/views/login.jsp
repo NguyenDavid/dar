@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>projetDar</title>
+<title>BreakFirst Game</title>
 	<link rel="stylesheet" href='<c:url value="/web-resources/css/bootstrap.css"/>'/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href='<c:url value="/web-resources/css/custom.css"/>'/>
@@ -40,12 +40,16 @@
 						</div>
 
 						<button type="submit" class="btn btn-lg btn-primary form-control">Se connecter</button>
+						<br/>
+						<div class="input-group  margin-bottom-sm">
+						<a id="sss" class="navbar-brand" href="register">s'enregistrer</a>
+						</div>
+						
 					</form>
 				</div>
 			</div>
 			<!-- END FOREACH -->
 
-			<h5><center><jsp:include page="planDuSite.jsp"></jsp:include></center></h5>
 		</div>
 	</div>
 </body>
